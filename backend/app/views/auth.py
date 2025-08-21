@@ -1,10 +1,10 @@
 from flask import Blueprint, current_app, jsonify, request
 from flask_jwt_extended import create_access_token, set_access_cookies, unset_jwt_cookies
-from sqlalchemy import SQLAlchemyError
+from sqlalchemy.exc import SQLAlchemyError
 import redis
-from backend.app import Captcha
-from backend.app import limiter, db
-from backend.app import User
+from app.utils.captcha import Captcha
+from app.extensions import limiter, db
+from app.models.user import User
 
 
 auth_bp = Blueprint('auth', __name__)
@@ -110,5 +110,3 @@ def reset_password():
     :return: JSON响应
     """
     pass
-
-

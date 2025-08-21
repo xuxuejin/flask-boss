@@ -27,4 +27,3 @@ def init_db_command():
         click.echo("Admin user already exists.")
 
     click.echo("Database tables created successfully.")
-

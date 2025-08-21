@@ -33,4 +33,3 @@ def register_blueprints(app: Flask):
                 app.logger.error(f"导入蓝图模块 '{module_name}' 失败: {e}")
             except Exception as e:
                 app.logger.error(f"注册蓝图 '{module_name}' 时发生错误: {e}")
-

@@ -27,7 +27,7 @@ def create_app():
     # 初始化 Redis 客户端，使用 from_url() 方法从配置中加载URI
     try:
         redis_client = Redis.from_url(app.config['REDIS_URI'])
-        app.redis_client = redis_client  # type: Redis
+        app.redis_client = redis_client
     except Exception as e:
         app.logger.error(f"Redis initialization failed: {e}")
         raise
